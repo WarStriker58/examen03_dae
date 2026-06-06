@@ -8,10 +8,10 @@ export interface Post {
   body: string;
 }
 
-// Creamos una instancia configurada de Axios para reutilizar en toda la app
+// 🌟 CORRECCIÓN AQUÍ: Agregamos "jsonplaceholder." a la URL
 const api = axios.create({
-  baseURL: 'https://typicode.com',
-  timeout: 10000, // 10 segundos de límite antes de cancelar la petición
+  baseURL: 'https://jsonplaceholder.typicode.com', 
+  timeout: 10000, 
   headers: {
     'Content-Type': 'application/json',
   },
@@ -20,6 +20,8 @@ const api = axios.create({
 export const postService = {
   // Obtiene la lista completa de publicaciones (Feed masivo)
   getAll: async (): Promise<Post[]> => {
+    // Al hacer un .get('/posts'), Axios lo une con la baseURL transformándose en:
+    // https://jsonplaceholder.typicode.com/posts
     const response = await api.get<Post[]>('/posts');
     return response.data;
   },
