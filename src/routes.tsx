@@ -46,4 +46,7 @@ export const router = createBrowserRouter([
       }
     ]
   }
-]);
+], {
+  // 🌟 OBLIGATORIO: Esto sincroniza las rutas con la subcarpeta de GitHub Pages
+  basename: "/jsonfeed-react/" 
+});
