@@ -29,9 +29,12 @@
 
 @layer base {
   * {
-    @apply border-border;
+    /* 🌟 Corregido: Usamos un color CSS nativo para evitar el error de compilación */
+    border-color: rgb(30, 41, 59); 
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    background-color: rgb(3, 7, 18);
+    color: rgb(249, 250, 251);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }

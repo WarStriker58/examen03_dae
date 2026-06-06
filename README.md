@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# 💬 JSONFeed React (jsonfeed-react)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una Single Page Application (SPA) moderna, minimalista y de alto rendimiento desarrollada en **React 19** y **Vite**. La aplicación consume datos asíncronos en tiempo real desde la API pública de JSONPlaceholder, gestiona un sistema de persistencia local para elementos favoritos y despliega notificaciones dinámicas con una interfaz oscura elegante potenciada por Tailwind CSS y componentes Shadcn UI.
 
-Currently, two official plugins are available:
+## 🚀 Enlaces del Proyecto
+*   **Despliegue Funcional (Deploy):** [INSERTA_AQUÍ_TU_LINK_DE_VERCEL_NETLIFY_O_PAGES]
+*   **Video Demostrativo (YouTube):** [INSERTA_AQUÍ_TU_LINK_DE_YOUTUBE]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠️ Tecnologías Utilizadas
+*   **Core:** React 19 (Hooks, Context, Loaders de enrutamiento)
+*   **Herramienta de Construcción:** Vite + TypeScript (Tipado estricto)
+*   **Enrutamiento:** React Router Dom (Arquitectura basada en Loaders asíncronos pre-render)
+*   **Cliente HTTP:** Axios (Instancia centralizada para consumo de endpoints)
+*   **Estilos y Componentes:** Tailwind CSS + Shadcn UI (Tema oscuro integrado)
+*   **Notificaciones:** Sonner (Toast manager reactivo)
+*   **Iconografía:** Lucide React
+*   **Persistencia:** LocalStorage API del Navegador
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📂 Estructura Principal del Código
+*   `src/services/api.ts`: Cliente Axios configurado y mapeo de tipos para la entidad `/posts`.
+*   `src/routes.tsx`: Definición de rutas fijas (`/`, `/entities`, `/contact`) y acoplamiento de loaders de datos pre-renderizado.
+*   `src/context/FavoritesContext.tsx`: Proveedor global del estado de favoritos con sincronización automática a `localStorage`.
+*   `src/layouts/RootLayout.tsx`: Estructura general de la app, Navbar responsivo, indicador de favoritos y contenedor global de notificaciones.
+*   `src/views/`: Módulos de pantalla individuales (`HomeView` con Hero institucional, `EntitiesView` listando 3+ propiedades del feed, y `ContactView` con formulario controlado).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 💻 Pasos para Ejecutar el Servidor Local
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Sigue estos comandos ordenados de forma lógica en tu terminal para clonar y ejecutar el entorno de desarrollo:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/WarStriker58/examen03_dae.git
+   cd jsonfeed-react
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **Instalar dependencias necesarias:**
+   ```bash
+   npm install
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. **Iniciar el servidor de desarrollo local:**
+   ```bash
+   npm run dev
+   ```
+   *El proyecto se abrirá automáticamente en tu navegador en la dirección `http://localhost:5173`.*
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4. **Compilar para producción (Opcional):**
+   ```bash
+   npm run build
+   ```
