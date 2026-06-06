@@ -4,8 +4,8 @@ import { defineConfig } from "vite"
 
 export default defineConfig({
   plugins: [react()],
-  // 🌟 OBLIGATORIO: Cambia 'jsonfeed-react' por el nombre de tu repositorio en GitHub
-  base: "/jsonfeed-react/", 
+  // 🌟 CAMBIA ESTO por el nombre real de tu repositorio:
+  base: "/examen03_dae/", 
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
