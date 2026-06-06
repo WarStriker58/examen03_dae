@@ -3,8 +3,8 @@
 Una Single Page Application (SPA) moderna, minimalista y de alto rendimiento desarrollada en **React 19** y **Vite**. La aplicación consume datos asíncronos en tiempo real desde la API pública de JSONPlaceholder, gestiona un sistema de persistencia local para elementos favoritos y despliega notificaciones dinámicas con una interfaz oscura elegante potenciada por Tailwind CSS y componentes Shadcn UI.
 
 ## 🚀 Enlaces del Proyecto
-*   **Despliegue Funcional (Deploy):** [INSERTA_AQUÍ_TU_LINK_DE_VERCEL_NETLIFY_O_PAGES]
-*   **Video Demostrativo (YouTube):** [INSERTA_AQUÍ_TU_LINK_DE_YOUTUBE]
+*   **Despliegue Funcional (Deploy):** https://warstriker58.github.io/examen03_dae/
+*   **Video Demostrativo (YouTube):** https://www.youtube.com/watch?v=Fgu36QA4ZnY
 
 ---
 
